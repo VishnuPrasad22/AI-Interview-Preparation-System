@@ -1,0 +1,249 @@
+What are tokens and embeddings in the context of Large Language Models (LLMs)?
+Tokens are the fundamental units of text that an LLM processes; they can be whole words, syllables, or even individual letters (for example, the word "generative" might be split into "gener", "at", "ive").
+
+Embeddings are the numerical vector representations of those tokens that place them in a multi-dimensional space based on their meaning. This conversion enables the model to capture semantic meaning and understand relationships between words, for example, recognizing that "king" is close to "queen".
+
+Can you explain the basic principles behind Generative Adversarial Networks (GANs)?
+GANs are constructed of two neural networks competing together (hence the word Adversarial): a generator and a discriminator.
+
+The generator creates fake data samples while the discriminator evaluates them against the real training data. The two networks are trained simultaneously:
+
+The generator aims to produce images so indistinguishable from the real data that the discriminator cannot tell the difference.
+The discriminator aims to accurately identify whether a given image is real or generated.
+Through this competitive learning, the generator becomes skilled at producing highly realistic data that is similar to the training data.
+
+What are some popular applications of generative AI in the real world?
+Text generation: Used in chatbots, content creation, or translation (ChatGPT, Claude, Gemini).
+Image generation: Producing realistic images for art or design (e.g., ChatGPT Images, Nano Banana Pro, Stable Diffusion).
+Coding agents: Writing entire code modules, used in software engineering.
+Retrieval-Augmented Generation (RAG): Enterprise knowledge retrieval, used in customer service or for internal wikis.
+Drug discovery: Designing new molecular structures for drugs.
+Data augmentation: Expanding low-data datasets for machine learning.
+What are some challenges associated with training and evaluating generative AI models?
+Computational cost: High computational power and hardware requirements for training more complex models.
+Training complexity: Training generative models could be challenging and full of nuances.
+Evaluation metrics: It’s challenging to quantitively assess the quality and diversity of the model outputs.
+Data requirements: Generative models often require massive amounts of data with high quality and diversity. The collection of such data could be time-consuming and expensive.
+Bias and fairness: Unchecked models can amplify the biases present in the training data, leading to unfair outputs.
+What are some ethical considerations surrounding the use of generative AI?
+The widespread use of GenAI and its use cases requires a thorough evaluation of their performance in terms of ethics. Some examples include:
+
+Deepfakes: Creating fake but hyper-realistic media can spread misinformation or defame individuals.
+Biased generation: Amplifying historical and societal biases in the training data.
+Intellectual property: Unauthorized use of copyrighter material in the data.
+How can generative AI be used to augment or enhance human creativity?
+While the hallucination of AI models could produce faulty outputs, these generative models are helpful in many terms and uses. They can be used as a creative inspiration to the experts in various fields:
+
+Art and design: Providing inspiration in art and design.
+Writing assistance: Suggesting titles and writing ideas or text completion.
+Music: Composing beats and harmonies.
+Programming: Optimizing existing code or offering ways to approach an implementation problem.
+What is the difference between a foundation model and a fine-tuned model?
+A Foundation Model (like GPT-5.2) is trained on massive amounts of broad internet data to learn general patterns, reasoning, and language structure.
+
+A Fine-Tuned model takes this generalist base and trains it further on a smaller, curated dataset to master a specific task, such as medical diagnosis or speaking in a specific coding language. Fine-tuning trades broad versatility for deeper expertise in a specific field.
+
+Intermediate Generative AI Interview Questions
+Now that we've covered the basics, let's explore some intermediate generative AI interview questions.
+
+What is "Mode Collapse" in GANs, and how do we address it?
+Just like a content creator who finds a certain format of videos results in more reach and interactions, the generative model of a GAN could likely become fixated on a limited diversity of outputs that deceives the discriminator model. This results in the generator producing a small set of outputs, costing the diversity and flexibility of the generated data.
+
+Possible solutions to this could be focusing on training techniques by adjusting the hyperparameters and various optimization algorithms, applying regularizations that promote diversity, or combining multiple generators to cover different modes of generating data.
+
+How does a Variational Autoencoder (VAE) work?
+A Variational Autoencoder (VAE) is a type of generative model that learns to encode input data into a latent space and decode it back to reconstruct the original input data. VAEs are encoder-decoder models:
+
+The encoder maps the input data to a distribution over the latent space.
+The decoder samples from this latent space distribution reconstruct the input data.
+The structure of a Variational Autoencoder
+
+The structure of a Variational Autoencoder. (Source: Wikimedia Commons)
+
+What makes VAEs different from traditional autoencoders, is that VAE encourages the latent space to follow a known distribution (such as Gaussian). This makes them more useful for generating new data by sampling from this latent space.
+
+Explain the difference between Retrieval-Augmented Generation (RAG) and fine-tuning. When would you use one over the other?
+RAG connects a model to external data sources (like your company wiki) to fetch up-to-date facts without retraining the model. The model's parameters stay the same; it just has access to additional data.
+
+Fine-tuning modifies the model's internal weights to change how it speaks, behaves, or reasons, but it is not good for adding new factual knowledge.
+
+Use RAG when you need up-to-date facts (news, private company data) or a specific citation. Use fine-tuning when you need the model to learn a new "behavior," language, or specific output format (e.g., speaking in SQL code).
+
+How would you evaluate an LLM application? Explain 'LLM-as-a-Judge'.
+Assessing the generated samples is a complex task that depends on the data modality (image, text, video, etc.). Traditional text metrics, such as accuracy, are insufficient for creative tasks because they only check for word overlap, not meaning. 
+
+LLM benchmarks and leaderboards use standardized tests to measure how well a model handles a given task. They are helpful to compare models and track progress within or across modalities.
+
+LLM-as-a-Judge is a modern evaluation framework where a highly capable "teacher" model (such as Gemini 3) grades the outputs of a smaller model based on specific criteria, including faithfulness, helpfulness, and tone. This provides a scalable way to approximate human preference without the slowness and cost of manual human review.
+
+What are some techniques for improving the stability and convergence of GAN training?
+Improving the stability and convergence of GAN training is important for avoiding mode collapse, ensuring efficient training, and achieving good results. Here are some techniques to improve the stability and convergence of GAN training:
+
+Wasserstein GAN (WGAN): Uses Wasserstein distance as a loss function, improving training stability and providing smoother gradients.
+Two-Timescale Update Rule (TTUR): Using separate learning rates for the generator and the discriminator.
+Label Smoothing: Softens the labels to prevent overconfidence.
+Adaptive learning rates: Using optimizers such as Adam to help manage learning rate dynamically.
+Gradient penalty: Penalizes large gradients in the discriminator to enforce Lipschitz continuity for a more stable training.
+How can you control the style or attributes of generated content using generative AI models?
+There are several common techniques to control the style of the GenAI outputs:
+
+Prompt engineering: Specify the desired output style by providing detailed prompts highlighting the style or the tone of the content generation. This is an effective and simple method in both text-to-text and text-to-image models. It is a much more effective method if you do it in alignment with the specific requirements or the documentation of the particular model in question.
+Temperature and sampling control: The temperature parameter controls how random the outputs would be. Lower temperatures mean a more conservative and predictable token selection, and higher temperature allows more creative generation. Other parameters, such as top-k and top-p, can also control how creatively the model selects possible next tokens while generating.
+Structured outputs: For structure, modern models utilize "JSON Mode" or "Structured Outputs," which constrain the model to strictly generate valid JSON or XML schemas rather than free text. 
+System prompts: System prompts are sent along with every new message to the model. They can be used to set persistent behavioral instructions that override user inputs to maintain specific personas or rules.
+Style transfer (Images): Another technique that can be used during inference for the models that support is, is to apply the style of one image (reference image) to an input image.
+Fine-tuning: We can use a pretrained model and fine-tune it on a specific dataset containing the style or tone that is desired. This means training the model further on additional data to learn additional specific styles or attributes.
+Reinforcement learning: We can guide the model to prefer certain outputs and steer away from other outputs by providing feedback. This feedback will be used to modify the model through reinforcement learning. Over time, the model will be aligned to the preferences of the users and/or preference datasets. An example of this, in the context of LLMs, is Reinforcement learning from human feedback (RLHF).
+What are some ways to address the issue of bias in generative AI models?
+Ensuring the model is unbiased and fair requires iterative adjustments and monitoring through each phase.
+
+First, data contamination needs to be prevented by making sure that no test data leaks into training data. In that case, the model would be trained to memorize the data rather than to generalize from it.
+
+Further, we have to ensure the training data is as diverse and inclusive as possible. During training, we can guide the model towards a fairer generation by incorporating fairness objectives into the loss function.
+
+The model outputs must be regularly monitored for bias. To build public trust, it helps to make the model’s decision-making process, dataset details, and the preprocessing steps as transparent as possible.
+
+Can you discuss the concept of "Latent Space" in generative models and its importance?
+In the context of Generative models, latent space is a lower-dimensional space that captures the essential features of the data in a way that similar inputs are mapped closer to each other. Sampling from this latent space allows the models to generate new data and manipulate specific attributes or features (generating variations of images).
+
+Latent spaces are key to generating outputs that are controllable, true to the training data, and diverse.
+
+What is the role of self-supervised learning in the development of generative AI models?
+The key idea behind self-supervised learning is to leverage a vast corpus of unlabeled data to learn useful representations without the need for manual labeling. Models such as BERT and GPT are trained by self-supervised methods such as next-token prediction, and learning the structure and the semantics of languages. This reduces the reliance on labeled data, which is costly and time-consuming to obtain, essentially allowing models to leverage vast unlabeled datasets for training.
+
+What is Low-Rank Adaptation (LoRA)?
+Retraining a massive 70-billion parameter model is prohibitively expensive and slow for most organizations. Low-Rank Adaptation (LoRA) solves this by freezing the main model weights and only training a tiny "adapter" layer (often less than 1% of the total parameters) that sits on top. This allows you to serve dozens of different "custom" models from a single base model, drastically reducing computational cost and storage needs.
+
+Advanced Generative AI Interview Questions
+For those seeking more senior roles or aiming to showcase a deep understanding of Generative AI, let's explore some advanced interview questions.
+
+Explain the concept of "Diffusion Models" and how they differ from older architectures.
+Diffusion Models work primarily by gradually adding noise to an image until only noise remains—and then learning how to reverse this process to generate new samples from noise. This process is called diffusion. These models have gained popularity for their ability to output high-quality and highly detailed images.
+
+
+
+Generation of an image through diffusion steps. (Source: Wikimedia Commons)
+
+The process of training these models includes two steps:
+
+The forward process (diffusion): Taking an input image and progressively adding noise over multiple steps, until the data is transformed into pure noise.
+The reverse process (denoising): Learning how to retrieve the original data from the noise. This is done by training a neural network to predict what the noise is, and then denoising the image step by step until the original data is recovered from noise.
+Unlike older GANs, which often suffered from training instability, diffusion models are more stable and scalable, though they can be slower due to their iterative nature.
+
+Modern variants like latent diffusion operate in a compressed "latent space" to speed up generation, and flow matching architectures are now replacing standard diffusion for even better performance.
+
+How does the Transformer architecture work, and what is its main bottleneck?
+The transformer architecture introduced in the paper “Attention is All You Need”, has revolutionized the field of generative AI, particularly in natural language processing (NLP).
+
+Unlike traditional recurrent neural networks (RNNs), which process data in a sequential manner, transformers use the self-attention mechanism to attribute weights to different parts of the input data simultaneously. This enables the model to capture contextual relationships effectively and allows for parallel processing of sequences, which significantly speeds up training.
+
+The main bottleneck is that this attention mechanism scales quadratically with sequence length—doubling the context window requires four times the compute. This makes "infinite context" theoretically possible but computationally expensive, driving research into more efficient attention methods.
+
+What is a "Reasoning Model" (System 2 thinking), and how does it differ from a standard LLM?
+Standard LLMs act as "System 1" thinkers, predicting the next word immediately based on surface-level patterns.
+
+Reasoning Models (like Gemini 3 or DeepSeek-R1) are trained to generate a hidden "Chain of Thought" before outputting an answer, allowing them to "think," plan, and self-correct mistakes. This makes them significantly better at complex math, coding, and logic puzzles, though they are slower and more expensive to run.
+
+Can you discuss the challenges of generating high-resolution or long-form content using generative AI?
+As you increase the complexity of AI generation, you should also tackle:
+
+Computational cost: High-resolution outputs require bigger networks and more computational power.
+Multi-GPU training: Larger models may not fit into a single GPU, requiring multi-GPU training. Online platforms can mitigate the complexity of implementing such systems.
+Training stability: Bigger networks and more complex architectures make it more challenging to maintain a stable training procedure.
+Data quality: Higher resolution and longer-form content require higher quality data.
+What are some emerging trends and research directions in the field of generative AI?
+The field of GenAI is evolving and reshaping at a fast pace. This includes:
+
+Multimodal Models: Integrating multiple formats of data such as text, audio, and images.
+Small language models (SLMs): Unlike large language models, SLMs are gaining traction due to their efficiency and adaptability. These models require fewer computational resources, making them suitable for deployment in environments with limited capabilities—read more in this blog on edge AI.
+Ethical AI: Developing frameworks to ensure aligned performance of generative models.
+Generative Models for Video: Advances in generating ultra-realistic and consistent videos through GenAI. The latest examples include Sora AI, Meta Movie Gen, and Runway Act-One.
+How would you design a system to use generative AI for creating personalized content in a specific industry, such as healthcare?
+Designing a system that uses generative AI for industry-specific use cases is a thorough approach. The general guidelines can be adjusted and modified across other industries as well.
+
+Understanding the industry needs: The domain knowledge of an industry has a major effect on the decisions that lead to the design of such a system. The first step is to acquire a general and practical knowledge of the industry, the fundamentals, concepts, goals, and requirements.
+Data collection and management: Identify possible data providers. In healthcare, this means collecting data from healthcare providers regarding treatment details, patient information, medical guidelines, etc. The industry-specific guardrails of Data Privacy and Security must be identified and respected. Ensure the data is high-quality, accurate, up-to-date and also representative of the diverse groups.
+Model selection: Decide whether to fine-tune pre-trained models or to come up with your architectures from scratch. Depending on the type of project, the optimal generative AI models can vary. A model like GPT-4o might be a good plug-and-play choice. Some domains may require models that are hosted locally for privacy reasons. In this case, open-source models are the way to go. Consider fine-tuning these models on the industry-specific data you have collected earlier.
+Output validation: Implement a thorough evaluation process where the experts and professionals validate generated content before being put to practice.
+Scalability: Design a scalable cloud-based infrastructure to handle the required loads without breaking the performance.
+Legal and ethical considerations: Set clear ethical guidelines for AI use and communicate your model's possible limitations transparently. Respect intellectual property rights and address any issues related to them.
+Continuous improvement: Regularly review the system’s performance and the experts’ evaluation of the generated content. Gather more insights and data to modify the model for better.
+Explain the concept of "in-context learning" in the context of LLMs.
+In-context learning refers to the ability of LLMs to modify their style and outputs based on the provided context without the need for additional fine-tuning.
+
+It could also be referred to as few-shot learning or prompt engineering. This could be achieved by specifying one or many examples of the desired response or by clearly describing how the model should behave.
+
+In-context learning also comes with its limitations. It is short-term and task-specific, as the model does not really retain any knowledge in other sessions of using this technique.
+
+Additionally, if the required output is complex, the model might need a large number of examples. If the provided examples are not clear enough or the task is more difficult than what the model can handle, it can sometimes generate incorrect or incoherent outputs.
+
+How can prompts be strategically designed to elicit desired behaviors or outputs from the model? What are some best practices for effective prompt engineering?
+Prompting is important in directing LLMs to respond to specific tasks. Effective prompts can even mitigate the need for fine-tuning models by using techniques such as few-shot learning, task decomposition, and prompt templates.
+
+Some best practices for effective, prompt engineering include:
+
+Be clear and concise: Provide specific instructions so the model knows exactly what task you want it to perform. Be straightforward and to-the-point.
+Use examples: For in-context learning, showing a few input-output pairs helps the model understand the task the way you would like.
+Break down complex tasks: If the task is complicated, breaking it into smaller steps can improve the quality of the response.
+Set constraints or formats: If you need a specific output style, format, or length, clearly state those requirements within the prompt.
+Read more in this blog on Prompt Optimization Techniques.
+
+What are some techniques for optimizing the inference speed of generative AI models?
+Model pruning: Removing unnecessary weights/layers to reduce model size.
+Quantization: Reducing the precision of model weights to fp16/int8.
+Knowledge distillation: Training a smaller model to mimic a larger one.
+GPU acceleration: Using specialized hardware.
+Can you explain the concept of "Conditional Generation" and how it is applied in models like Conditional GANs (cGANs)?
+Conditional Generation involves the model generating outputs based on certain conditions or contexts. This allows more control over the generated content. In Conditional GANs (cGANs), both the generator and discriminator are conditioned on additional information, such as class labels. Here's how it works:
+
+Generator: Receives both noise and conditional information (e.g., a class label) to produce data that aligns with the condition.
+Discriminator: Evaluates the authenticity of the generated data while also considering the conditional information.
+Can you explain the Mixture of Experts (MoE) architecture? Why is it preferred for large models?
+Mixture of Experts (MoE) replaces a single dense neural network with many specialized "expert" sub-networks. For any given token, a router selects only the most relevant experts to process the data, meaning a model might have 100 billion parameters but only use 10 billion for inference.
+
+This architecture allows models to be incredibly smart (high total parameter count) while remaining fast and cheap to run (low active parameter count).
+
+Generative AI Interview Questions for an AI Engineer
+If you're interviewing for an AI engineering role with a focus on generative AI, expect questions that assess your ability to design, implement, and deploy generative models.
+
+What is an agentic workflow versus a standard chatbot?
+A standard chatbot is passive: it receives a query and outputs a text answer based on its training.
+
+An agentic workflow gives the LLM access to tools (like a web browser, code interpreter, or API) and the autonomy to plan a multi-step process to solve a goal. The agent might plan to search the web, analyze the data with Python code, and then write a report, looping until the task is complete.
+
+How do you ensure safety and robustness in LLM deployment using Guardrails?
+Ensuring the safety and robustness of LLMs comes with several challenges. A primary challenge includes the potential of generating outputs that are harmful or biased, as these models are trained on vast or even unfiltered data sources and may produce toxic or misleading content.
+
+Another major issue with LLM-generated content is the danger of hallucination, where the model generates confidently sounding content that is, in fact, incorrect information. Another challenge is the security against adversarial prompts that violate the model’s safety measures and produce harmful or unethical responses, as has been proven many times regarding various models.
+
+Incorporating safety filters and moderation layers can help identify and remove harmful content that is being generated. Ongoing human-in-the-loop oversight further enhances model safety.
+
+In addition to that, engineers must implement explicit Guardrails (like NeMo Guardrails or Llama Guard) that sit between the user and the model. These systems scan inputs to block prompt injection attempts or PII (Personally Identifiable Information) leakage and scan outputs to catch toxic or hallucinatory responses before they reach the user. This creates a deterministic safety layer that operates independently of the model’s probabilistic nature.
+
+Describe a challenging project involving generative AI that you've tackled. What were the key challenges, and how did you overcome them?
+Answering this question is really subjective to your projects and experiences. You can, however, keep these points in mind when answering questions like this:
+
+Select a specific project with clear AI challenges like bias, model accuracy, or hallucination.
+Clarify the challenge and explain the technical or operational difficulty.
+Show your approach by mentioning key strategies you leveraged like data augmentation, model tuning, or collaboration with experts.
+Highlight results and quantify the impact—improved accuracy, better user engagement, or solving a business problem.
+Can you discuss your experience with implementing and deploying generative AI models in production environments?
+Just as the question above, this question can be answered based on your experience, but by also keeping in mind to:
+
+Focus on deployment: Mention infrastructure (cloud services, MLOps tools) and key deployment tasks (scaling, low-latency optimization). There is no need to go into details. Just showing that you are on top of the game is adequate.
+Mention a challenge: It pays off to mention one or two common challenges to stay away from, to show your expertise.
+Cover post-deployment: Include monitoring and maintenance strategies to ensure consistent performance.
+Address safety: Mention any measures taken to handle bias or safety during the rollout.
+How do you handle the "lost in the middle" phenomenon in long-text windows?
+Even with massive context windows (e.g., 1 million tokens), LLMs often struggle to retrieve information buried in the middle of the prompt, prioritizing the start and end.
+
+Engineers mitigate this by using intelligent re-ranking algorithms that move the most critical retrieved chunks to the beginning or end of the context window. Another strategy is the "map-reduce" algorithm, where the model summarizes sections of the long document independently before combining them for a final answer.
+
+How would you approach the task of building an end-to-end RAG system?
+Building a RAG system requires a systematic approach. Here's how the pipeline could look: 
+
+Effective Chunking: Use semantic or recursive strategies to split documents into meaningful segments (rather than arbitrary character counts) to ensure context is preserved.
+Vector Storage: Embed these chunks using a high-performance embedding model and store them in a vector database, attaching rich metadata (like dates or authors) for pre-filtering.
+Hybrid Search: Implement a retrieval layer that combines keyword search (BM25) for exact matches with vector search (semantic similarity) to capture both specific terms and broader concepts.
+Re-ranking: Apply a cross-encoder model to re-score the top retrieved results, aggressively filtering out irrelevant "noise" chunks before they reach the LLM.
+Citation & Generation: Prompt the LLM to generate answers strictly based on the provided context and require it to cite specific source documents to prevent hallucination.

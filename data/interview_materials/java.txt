@@ -1,0 +1,683 @@
+1. Is Java Platform Independent?
+Yes, Java is a Platform Independent language. Unlike many programming languages javac compiles the program to form a bytecode or .class file. This file is independent of the software or hardware running but needs a JVM(Java Virtual Machine) file preinstalled in the operating system for further execution of the bytecode.
+
+Although JVM is platform dependent, the bytecode can be created on any System and can be executed in any other system despite hardware or software being used which makes Java platform independent.
+
+2. What are the top Java Features?
+Java is one the most famous and most used language in the real world, there are many features in Java that makes it better than any other language some of them are mentioned below:
+
+
+Features of Java
+Simple: Java is quite simple to understand and the syntax
+Platform Independent: Java is platform independent means we can run the same program in any software and hardware and will get the same result.
+Interpreted: Java is interpreted as well as a compiler-based language. 
+Robust: features like Garbage collection, exception handling, etc that make the language robust.
+Object-Oriented: Java is an object-oriented language that supports the concepts of class,  objects, four pillars of OOPS, etc. 
+Secured: As we can directly share an application with the user without sharing the actual program makes Java a secure language. 
+High Performance:  faster than other traditional interpreted programming languages.
+Dynamic: supports dynamic loading of classes and interfaces.
+Distributed: feature of Java makes us able to access files by calling the methods from any machine connected.
+Multithreaded: deal with multiple tasks at once by defining multiple threads
+Architecture Neutral: it is not dependent on the architecture.
+
+
+3. What is JVM?
+JVM stands for Java Virtual Machine it is a Java interpreter. It is responsible for loading, verifying, and executing the bytecode created in Java.
+Although it is platform dependent which means the software of JVM is different for different Operating Systems it plays a vital role in making Java platform Independent.
+JVM-768
+JVM
+To know more about the topic refer to JVM in Java.
+
+4. What is JIT?
+JIT-768
+JIT
+JIT stands for (Just-in-Time) compiler is a part of JRE(Java Runtime Environment), it is used for better performance of the Java applications during run-time. The use of JIT is mentioned in step by step process mentioned below:
+
+Source code is compiled with javac to form bytecode
+Bytecode is further passed on to JVM 
+JIT is a part of JVM, JIT is responsible for compiling bytecode into native machine code at run time.
+The JIT compiler is enabled throughout, while it gets activated when a method is invoked. For a compiled method, the JVM directly calls the compiled code, instead of interpreting it.
+As JVM calls the compiled code that increases the performance and speed of the execution.
+To know more about the topic refer to JIT in Java.
+
+5. What are Memory storages available with JVM?
+JVM-Areas-768
+Class Loader
+JVM consists of a few memory storages as mentioned below:
+
+Class(Method) Area: stores class-level data of every class such as the runtime constant pool, field, and method data, and the code for methods.
+Heap: Objects are created or objects are stored. It is used to allocate memory to objects during run time.
+Stack: stores data and partial results which will be needed while returning value for method and performing dynamic linking
+Program Counter Register: stores the address of the Java virtual machine instruction currently being executed.
+Native Method Stack: stores all the native methods used in the application.
+To know more about the topic refer to JVM Memory Storages.
+
+6. What is a classloader?
+Classloader is the part of JRE(Java Runtime Environment), during the execution of the bytecode or created .class file classloader is responsible for dynamically loading the java classes and interfaces to JVM(Java Virtual Machine). Because of classloaders Java run time system does not need to know about files and file systems.
+
+To know more about the topic refer to ClassLoader in Java.
+
+7. Difference between JVM, JRE, and JDK.
+JVM: JVM also known as Java Virtual Machine is a part of JRE. JVM is a type of interpreter responsible for converting bytecode into machine-readable code. JVM itself is platform dependent but it interprets the bytecode which is the platform-independent reason why Java is platform-independent. 
+
+JRE: JRE stands for Java Runtime Environment, it is an installation package that provides an environment to run the Java program or application on any machine.
+
+JDK: JDK stands for Java Development Kit which provides the environment to develop and execute Java programs. JDK is a package that includes two things Development Tools to provide an environment to develop your Java programs and, JRE to execute Java programs or applications.
+
+To know more about the topic refer to the Differences between JVM, JRE, and JDK.
+
+8. What are the differences between Java and C++?
+Basis
+
+C++
+
+Java
+
+Platform                   
+
+C++ is Platform Dependent
+
+Java is Platform Independent
+
+Application
+
+C++ is mainly used for System Programming
+
+Java is Mainly used for Application Programming
+
+Hardware
+
+C++ is nearer to hardware
+
+Java is not so interactive with hardware
+
+Global Scope
+
+C++ supports global and namespace scope.
+
+Java doesn't support global scope.
+
+Not Supporting                  
+
+Functionality supported in Java but not in C++ are:
+
+thread support
+documentation comment
+unsigned right shift(>>>)
+Functionality supported in C++ but not in Java are:
+
+goto
+Pointers
+Call by reference
+Structures and Unions
+Multiple Inheritance
+Virtual Functions
+OOPS
+
+C++ is an object-oriented language. It is not a single root hierarchy .
+
+Java is also an object-oriented language. It is a single root hierarchy as everything gets derived from a single class (java.lang.Object).
+
+Inheritance Tree
+
+C++ always creates a new inheritance tree.
+
+Java uses a Single inheritance tree as classes in Java are the child of object classes in Java.
+
+9. Explain public static void main(String args[]) in Java.
+Main_function
+public static void main
+Unlike any other programming language like C, C++, etc. In Java, we declared the main function as a public static void main (String args[]). The meanings of the terms are mentioned below:
+
+public: the public is the access modifier responsible for mentioning who can access the element or the method and what is the limit.  It is responsible for making the main function globally available. It is made public so that JVM can invoke it from outside the class as it is not present in the current class.
+static: static is a keyword used so that we can use the element without initiating the class so to avoid the unnecessary allocation of the memory. 
+void: void is a keyword and is used to specify that a method doesn’t return anything. As the main function doesn't return anything we use void.
+main: main represents that the function declared is the main function. It helps JVM to identify that the declared function is the main function.
+String args[]: It stores Java command-line arguments and is an array of type java.lang.String class.
+10. What is Java String Pool?
+A Java String Pool is a place in heap memory where all the strings defined in the program are stored. A separate place in a stack is there where the variable storing the string is stored. Whenever we create a new string object, JVM checks for the presence of the object in the String pool, If String is available in the pool, the same object reference is shared with the variable, else a new object is created.
+
+Java-String-Pool-768
+Java String Pool
+Example:
+
+String str1="Hello";
+// "Hello" will be stored in String Pool
+// str1 will be stored in stack memory
+
+11. What will happen if we don't declare the main as static?
+We can declare the main method without using static and without getting any errors. But, the main method will not be treated as the entry point to the application or the program.
+
+12. What are Packages in Java?
+Packages in Java can be defined as the grouping of related types of classes, interfaces, etc providing access to protection and namespace management.
+
+13. Why Packages are used?
+Packages are used in Java in order to prevent naming conflicts, control access, and make searching/locating and usage of classes, interfaces, etc easier.
+
+14. What are the advantages of Packages in Java?
+There are various advantages of defining packages in Java.
+
+Packages avoid name clashes.
+The Package provides easier access control.
+We can also have the hidden classes that are not visible outside and are used by the package.
+It is easier to locate the related classes.
+15. How many types of packages are there in Java?
+There are two types of packages in Java
+
+User-defined packages
+Build In packages
+16. Explain different data types in Java.
+There are 2 types of data types in Java as mentioned below:
+
+Primitive Data Type
+Non-Primitive Data Type or Object Data type
+Primitive Data Type: Primitive data are single values with no special capabilities. There are 8 primitive data types:
+
+boolean: stores value true or false
+byte: stores an 8-bit signed two's complement integer
+char: stores a single 16-bit Unicode character
+short: stores a 16-bit signed two’s complement integer
+int: stores a 32-bit signed two’s complement integer
+long: stores a 64-bit two’s complement integer
+float: stores a single-precision 32-bit IEEE 754 floating-point
+double: stores a double-precision 64-bit IEEE 754 floating-point
+Non-Primitive Data Type: Reference Data types will contain a memory address of the variable's values because it is not able to directly store the values in the memory. Types of Non-Primitive are mentioned below:
+
+Strings
+Array
+Class
+Object
+Interface
+17. When a byte datatype is used?
+A byte is an 8-bit signed two-complement integer. The minimum value supported by bytes is -128 and 127 is the maximum value. It is used in conditions where we need to save memory and the limit of numbers needed is between -128 to 127.
+
+18. Can we declare Pointer in Java?
+No, Java doesn't provide the support of Pointer. As Java needed to be more secure because which feature of the pointer is not provided in Java.
+
+19. What is the default value of byte datatype in Java?
+The default value of the byte datatype in Java is 0.
+
+20. What is the default value of float and double datatype in Java?
+The default value of the float is 0.0f and of double is 0.0d in Java.
+
+21. What is the Wrapper class in Java?
+Wrapper, in general, is referred to a larger entity that encapsulates a smaller entity. Here in Java, the wrapper class is an object class that encapsulates the primitive data types. 
+
+The primitive data types are the ones from which further data types could be created. For example, integers can further lead to the construction of long, byte, short, etc. On the other hand, the string cannot, hence it is not primitive. 
+
+Getting back to the wrapper class, Java contains 8 wrapper classes. They are Boolean, Byte, Short, Integer, Character, Long, Float, and Double. Further, custom wrapper classes can also be created in Java which is similar to the concept of Structure in the C programming language. We create our own wrapper class with the required data types.
+
+22. Why do we need wrapper classes?
+The wrapper class is an object class that encapsulates the primitive data types, and we need them for the following reasons:
+
+Wrapper classes are final and immutable
+Provides methods like valueOf(), parseInt(), etc.
+It provides the feature of autoboxing and unboxing.
+23. Differentiate between instance and local variables.
+Instance Variable
+
+Local Variable
+
+Declared outside the method, directly invoked by the method.
+
+Declared within the method.                                                              
+
+Has a default value.
+
+No default value
+
+It can be used throughout the class.
+
+The scope is limited to the method.
+
+24. What are the default values assigned to variables and instances in Java?
+In Java When we haven’t initialized the instance variables then the compiler initializes them with default values. The default values for instances and variables depend on their data types. Some common types of default data types are:
+
+The default value for numeric types (byte, short, int, long, float, and double) is 0.
+The default value for the boolean type is false.
+The default value for object types (classes, interfaces, and arrays) is null.
+The null character, "u0000, " is the default value for the char type.
+Example:
+
+
+
+
+// Java Program to demonstrate use of default values
+import java.io.*;
+class GFG {
+    // static values
+    static byte b;
+    static int i;
+    static long l;
+    static short s;
+    static boolean bool;
+    static char c;
+    static String str;
+    static Object object;
+    static float f;
+    static double d;
+    static int[] Arr;
+    public static void main(String[] args)
+    {
+        // byte value
+        System.out.println("byte value" + b);
+        // short value
+        System.out.println("short value" + s);
+        // int value
+        System.out.println("int value" + i);
+        // long value
+        System.out.println("long value" + l);
+        System.out.println("boolean value" + bool);
+        System.out.println("char value" + c);
+        System.out.println("float value" + f);
+        System.out.println("double value" + d);
+        System.out.println("string value" + str);
+        System.out.println("object value" + object);
+        System.out.println("Array value" + Arr);
+    }
+}
+Output:
+
+byte value0
+short value0
+int value0
+long value0
+boolean valuefalse
+char value
+float value0.0
+double value0.0
+string valuenull
+object valuenull
+Array valuenull
+
+25. What is a Class Variable?
+In Java, a class variable (also known as a static variable) is a variable that is declared within a class but outside of any method, constructor, or block. Class variables are declared with the static keyword, and they are shared by all instances (objects) of the class as well as by the class itself. No matter how many objects are derived from a class, each class variable would only exist once.
+
+Example:
+
+
+
+
+// Java program to demonstrate use of Clas Variable
+class GFG {
+    public static int ctr = 0;
+    public GFG() { ctr++; }
+    public static void main(String[] args)
+    {
+        GFG obj1 = new GFG();
+        GFG obj2 = new GFG();
+        GFG obj3 = new GFG();
+        System.out.println("Number of objects created are "
+                           + GFG.ctr);
+    }
+}
+
+Output
+Number of objects created are 3
+26. What is the default value stored in Local Variables?
+There is no default value stored with local variables. Also, primitive variables and objects don't have any default values.
+
+27. Explain the difference between instance variable and a class variable.
+Instance Variable: A class variable without the static modifier is called an instance variable. It is unique to each object (instance) of the class and is not shared between instances.
+
+Example:
+
+
+
+
+// Java Program to demonstrate Instance Variable
+import java.io.*;
+class GFG {
+    private String name;
+    public void setName(String name) { this.name = name; }
+    public String getName() { return name; }
+    public static void main(String[] args)
+    {
+        GFG obj = new GFG();
+        obj.setName("John");
+        System.out.println("Name " + obj.getName());
+    }
+}
+
+Output
+Name John
+Class Variable:  Class Variable variable can be declared anywhere at the class level using the keyword static. These variables can only have one value when applied to various objects. These variables can be shared by all class members since they are not connected to any specific object of the class.  
+
+Example:
+
+
+
+
+// Java Program to demonstrate Class Variable
+import java.io.*;
+class GFG {
+    // class variable
+    private static final double PI = 3.14159;
+    private double radius;
+    public GFG(double radius) { this.radius = radius; }
+    public double getArea() { return PI * radius * radius; }
+    public static void main(String[] args)
+    {
+        GFG obj = new GFG(5.0);
+        System.out.println("Area of circle: "
+                           + obj.getArea());
+    }
+}
+
+Output
+Area of circle: 78.53975
+28. What is a static variable?
+The static keyword is used to share the same variable or method of a given class. Static variables are the variables that once declared then a single copy of the variable is created and shared among all objects at the class level.
+
+29. What is the difference between System.out, System.err, and System.in?
+System.out - It is a PrintStream that is used for writing characters or can be said it can output the data we want to write on the Command Line Interface console/terminal. 
+
+Example:
+
+
+
+
+// Java Program to implement
+// System.out
+import java.io.*;
+// Driver Class
+class GFG {
+    // Main Function
+    public static void main(String[] args)
+    {
+        // Use of System.out
+        System.out.println("");
+    }
+}
+
+System.err - It is used to display error messages.
+
+Example:
+
+
+
+
+// Java program to demonstrate
+// System.err
+import java.io.*;
+// Driver Class
+class GFG {
+    // Main function
+    public static void main(String[] args)
+    {
+        // Printing error
+        System.err.println(
+            "This is how we throw error with System.err");
+    }
+}
+Output:
+
+This is how we throw error with System.err
+
+Although, System.err have many similarities both of them have quite a lot of difference also, let us check them.
+
+System.out	System.err
+It will print to the standard out of the system.
+
+It will print to the standard error.
+
+It is mostly used to display results on the console.
+
+It is mostly used to output error texts.
+
+It gives output on the console with the default(black) color.
+
+It also gives output on the console but most of the IDEs give it a red color to differentiate.
+
+System.in - It is an InputStream used to read input from the terminal Window. We can't use the System.in directly so we use Scanner class for taking input with the system.in.
+
+Example:
+
+
+
+
+import java.util.*;
+// Driver Class
+class Main {
+    // Main Function
+    public static void main(String[] args)
+    {
+        // Scanner class with System.in
+        Scanner sc = new Scanner(System.in);
+        // Taking input from the user
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        // Printing the output
+        System.out.printf("Addition: %d", x + y);
+    }
+}
+Output:
+
+3
+4
+Addition: 7
+
+30. What do you understand by an IO stream?
+2-768
+Java Application
+Java brings various Streams with its I/O package that helps the user to perform all the input-output operations. These streams support all types of objects, data types, characters, files, etc to fully execute the I/O operations.
+
+31. What is the difference between the Reader/Writer class hierarchy and the InputStream/OutputStream class hierarchy?
+The key difference between them is that byte stream data is read and written by input/output stream classes. Characters are handled by the Reader and Writer classes. In contrast to Reader/Writer classes, which accept character arrays as parameters, input/output stream class methods accept byte arrays. In comparison to input/output streams, the Reader/Writer classes are more efficient, handle all Unicode characters, and are useful for internalization. Use Reader/Writer classes instead of binary data, such as pictures, unless you do so.
+
+Example:
+
+
+
+
+import java.io.*;
+​
+class GFG {
+    public static void main(String[] args) {
+        try {
+            // Writing binary data to a file using OutputStream
+            byte[] data = {(byte) 0xe0, 0x4f, (byte) 0xd0, 0x20, (byte) 0xea};
+            OutputStream os = new FileOutputStream("data.bin");
+            os.write(data);
+            os.close();
+​
+            // Reading binary data from a file using InputStream
+            InputStream is = new FileInputStream("data.bin");
+            byte[] newData = new byte[5];
+​
+            is.read(newData);
+            is.close();
+​
+            // Printing the read data
+            for (byte b : newData) {
+                System.out.print(b+" ");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output
+-32 79 -48 32 -22 
+32. What are the super most classes for all the streams?
+All the stream classes can be divided into two types of classes that are ByteStream classes and CharacterStream Classes. The ByteStream classes are further divided into InputStream classes and OutputStream classes. CharacterStream classes are also divided into Reader classes and Writer classes. The SuperMost classes for all the InputStream classes is java.io.InputStream and for all the output stream classes is java.io.OutPutStream. Similarly, for all the reader classes, the super-most class is java.io.Reader, and for all the writer classes, it is java.io.Writer.
+
+33. What are the FileInputStream and FileOutputStream?
+To read and write data, Java offers I/O Streams. A Stream represents an input source or an output destination, which could be a file, an i/o device, another program, etc. FileInputStream in Java is used to read data from a file as a stream of bytes. It is mostly used for reading binary data such as images, audio files, or serialized objects. 
+
+Example:
+
+File file = new File("path_of_the_file");
+FileInputStream inputStream = new FileInputStream(file);
+
+In Java, the FileOutputStream function is used to write data byte by byte into a given file or file descriptor. Usually, raw byte data, such as pictures, is written into a file using FileOutputStream.
+
+Example:
+
+File file = new File("path_of_the_file");
+FileOutputStream outputStream = new FileOutputStream(file);
+
+34. What is the purpose of using BufferedInputStream and BufferedOutputStream classes?
+When we are working with the files or stream then to increase the Input/Output performance of the program we need to use the BufferedInputStream and BufferedOutputStream classes. These both classes provide the capability of buffering which means that the data will be stored in a buffer before writing to a file or reading it from a stream. It also reduces the number of times our OS needs to interact with the network or the disk. Buffering allows programs to write a big amount of data instead of writing it in small chunks. This also reduces the overhead of accessing the network or the disk. 
+
+BufferedInputStream(InputStream inp);
+// used to create the bufferinput stream and save the arguments.
+
+BufferedOutputStream(OutputStream output);
+// used to create a new buffer with the default size.
+
+35. What are FilterStreams?
+Stream filter or Filter Streams returns a stream consisting of the elements of this stream that match the given predicate. While working filter() it doesn't actually perform filtering but instead creates a new stream that, when traversed, contains the elements of initial streams that match the given predicate.
+
+Example:
+
+FileInputStream fis =new FileInoutStream("file_path"); 
+FilterInputStream = new BufferedInputStream(fis);
+
+36. What is an I/O filter?
+An I/O filter also defined as an Input Output filter is an object that reads from one stream and writes data to input and output sources. It used java.io package to use this filter.
+
+37. How many ways you can take input from the console?
+There are two methods to take input from the console in Java mentioned below:
+
+Using Command line argument
+Using Buffered Reader Class
+Using Console Class
+Using Scanner Class
+38. Difference in the use of print, println, and printf.
+print, println, and printf all are used for printing the elements but print prints all the elements and the cursor remains in the same line. println shifts the cursor to next line. And with printf we can use format identifiers too.
+
+39. What are operators? 
+Operators are the special types of symbols used for performing some operations over variables and values.
+
+40. How many types of operators are available in Java? 
+All types of operators in Java are mentioned below:
+
+Arithmetic Operators
+Unary Operators
+Assignment Operator
+Relational Operators
+Logical Operators
+Ternary Operator
+Bitwise Operators
+Shift Operators
+instance of operator
+Postfix operators are considered as the highest precedence according to Java operator precedence.
+
+41. Explain the difference between >> and >>> operators.
+Operators like >> and >>> seem to be the same but act a bit differently. >> operator shifts the sign bits and the >>> operator is used in shifting out the zero-filled bits.
+
+Example:
+
+
+
+
+import java.io.*;
+​
+// Driver
+class GFG {
+    public static void main(String[] args) {
+        int a = -16, b = 1;
+        // Use of >>
+        System.out.println(a >> b);
+        a = -17;
+        b = 1;
+        // Use of >>>
+        System.out.println(a >>> b);
+    }
+}
+
+Output
+-8
+2147483639
+42. Which Java operator is right associative?
+There is only one operator which is right associative which is = operator.
+
+43. What is dot operator?
+The Dot operator in Java is used to access the instance variables and methods of class objects. It is also used to access classes and sub-packages from the package.
+
+44. What is covariant return type?
+The covariant return type specifies that the return type may vary in the same direction as the subclass. It's possible to have different return types for an overriding method in the child class, but the child’s return type should be a subtype of the parent’s return type and because of that overriding method becomes variant with respect to the return type.
+
+We use covariant return type because of the following reasons:
+
+Avoids confusing type casts present in the class hierarchy and makes the code readable, usable, and maintainable.
+Gives liberty to have more specific return types when overriding methods.
+Help in preventing run-time ClassCastExceptions on returns.
+45. What is the transient keyword?
+The transient keyword is used at the time of serialization if we don’t want to save the value of a particular variable in a file. When JVM comes across a transient keyword, it ignores the original value of the variable and saves the default value of that variable data type.
+
+46. What's the difference between the methods sleep() and wait()?
+Sleep()
+
+Wait()
+
+The sleep() method belongs to the thread class.
+
+Wait() method belongs to the object class.
+
+Sleep does not release the lock that the current thread holds.
+
+wait() release the lock which allows other threads to acquire it.
+
+This method is a static method.
+
+This method is not a static method.
+
+Sleep() does not throw an InterruptedException.	InterruptedException is shown if the thread is interrupted while waiting.
+Mainly used to delay a thread for some specific time duration.
+
+Mainly used to pause a thread until notified by another thread.
+
+Sleep() Has Two Overloaded Methods:
+
+sleep(long millis)millis: milliseconds
+sleep(long millis, int nanos) nanos: Nanoseconds
+Wait() Has Three Overloaded Methods:
+
+wait()
+wait(long timeout)
+wait(long timeout, int nanos)
+47. What are the differences between String and StringBuffer?
+String
+
+StringBuffer
+
+Store of a sequence of characters.            	Provides functionality to work with the strings.
+It is immutable.	It is mutable (can be modified and other string operations could be performed on them.)
+No thread operations in a string.                                                           	It is thread-safe (two threads can't call the methods of StringBuffer simultaneously) 
+48. What are the differences between StringBuffer and StringBuilder?
+StringBuffer
+
+StringBuilder
+
+StringBuffer provides functionality to work with the strings.	StringBuilder is a class used to build a mutable string.
+It is thread-safe (two threads can't call the methods of StringBuffer simultaneously)	It is not thread-safe (two threads can call the methods concurrently)
+Comparatively slow as it is synchronized.	Being non-synchronized, implementation is faster
+49. Which among String Builder or String Buffer should be preferred when there are a lot of updates required to be done in the data?
+String is immutable, making it inefficient for scenarios requiring frequent updates. Instead, we can use StringBuilder or StringBuffer. If thread safety is required (synchronized operations), StringBuffer should be used. However, if performance is a priority in a single-threaded context, StringBuilder is the better choice since it is faster and does not incur synchronization overhead.
+
+50. Why is StringBuffer called mutable?
+StringBuffer class in Java is used to represent a changeable string of characters. It offers an alternative to the immutable String class by enabling you to change a string's contents without constantly creating new objects. Mutable (modifiable) strings are created with the help of the StringBuffer class. The StringBuffer class in Java is identical to the String class except that it is changeable.
+
+Example:
+
+
+
+
+// Java Program to demonstrate use of stringbuffer
+public class StringBufferExample {
+    public static void main(String[] args)
+    {
+        StringBuffer s = new StringBuffer();
+        s.append("Geeks");
+        s.append("for");
+        s.append("Geeks");
+        String message = s.toString();
+        System.out.println(message);
+    }
+}
+
+Output
+GeeksforGeeks
