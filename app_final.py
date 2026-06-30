@@ -35,8 +35,6 @@ st.set_page_config(
 inject_custom_css()
 render_hero()
 
-
-# =====================================================
 # Helper: safe call wrapper
 # =====================================================
 
@@ -49,7 +47,6 @@ def safe_call(fn, *args, error_label="this step", **kwargs):
         return None
 
 
-# =====================================================
 # Sidebar
 # =====================================================
 
@@ -87,8 +84,6 @@ with st.sidebar:
             del st.session_state[key]
         st.rerun()
 
-
-# =====================================================
 # Resume + JD Input
 # =====================================================
 
@@ -166,8 +161,6 @@ if analyze_clicked:
             else:
                 st.error("Analysis could not be completed. Please check the inputs and try again.")
 
-
-# =====================================================
 # Main tabs
 # =====================================================
 
@@ -176,7 +169,7 @@ tab_resume, tab_questions, tab_interview, tab_growth, tab_coach = st.tabs(
 )
 
 
-# -----------------------------------------------------
+# 
 # TAB 1: Resume & ATS
 # -----------------------------------------------------
 with tab_resume:
@@ -295,8 +288,6 @@ with tab_resume:
             )
         section_card_end()
 
-
-# -----------------------------------------------------
 # TAB 2: Interview Questions
 # -----------------------------------------------------
 with tab_questions:
